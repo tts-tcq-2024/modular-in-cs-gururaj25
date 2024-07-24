@@ -1,29 +1,17 @@
 using System;
 using System.Drawing;
-
 namespace TelCo.ColorCoder
 {
     public static class ColorMapper
     {
-
-        /// <summary>
-        /// Array of Major colors
-        /// </summary>
         private static Color[] colorMapMajor;
-        /// <summary>
-        /// Array of minor colors
-        /// </summary>
         private static Color[] colorMapMinor;
         static ColorMapper()
         {
             colorMapMajor = new Color[] { Color.White, Color.Red, Color.Black, Color.Yellow, Color.Violet };
             colorMapMinor = new Color[] { Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray };
         }
-        /// <summary>
-        /// Given a pair number function returns the major and minor colors in that order
-        /// </summary>
-        /// <param name="pairNumber">Pair number of the color to be fetched</param>
-        /// <returns></returns>
+
         public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
             if (pairNumber < 1 || pairNumber > colorMapMinor.Length * colorMapMajor.Length)
@@ -43,11 +31,7 @@ namespace TelCo.ColorCoder
 
             return pair;
         }
-        /// <summary>
-        /// Given the two colors the function returns the pair number corresponding to them
-        /// </summary>
-        /// <param name="pair">Color pair with major and minor color</param>
-        /// <returns></returns>
+
         public static int GetPairNumberFromColor(ColorPair pair)
         {
             int majorIndex = Array.IndexOf(colorMapMajor, pair.MajorColor);
