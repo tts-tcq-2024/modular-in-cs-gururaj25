@@ -22,13 +22,11 @@ namespace TelCo.ColorCoder
 
             int majorIndex = (pairNumber - 1) / colorMapMinor.Length;
             int minorIndex = (pairNumber - 1) % colorMapMinor.Length;
-
             ColorPair pair = new ColorPair()
             {
                 MajorColor = colorMapMajor[majorIndex],
                 MinorColor = colorMapMinor[minorIndex]
             };
-
             return pair;
         }
 
